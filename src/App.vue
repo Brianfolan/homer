@@ -26,6 +26,7 @@
         </div>
       </section>
 
+      <Tabs :tabs="tabs" :current-tab="currentPage" />
       <Navbar
         :open="showMenu"
         :links="config.links"
@@ -114,6 +115,7 @@ import SearchInput from "./components/SearchInput.vue";
 import SettingToggle from "./components/SettingToggle.vue";
 import DarkMode from "./components/DarkMode.vue";
 import DynamicTheme from "./components/DynamicTheme.vue";
+import Tabs from "./components/Tabs.vue";
 
 import defaultConfig from "./assets/defaults.yml?raw";
 
@@ -129,6 +131,7 @@ export default {
     SettingToggle,
     DarkMode,
     DynamicTheme,
+    Tabs,
   },
   provide() {
     return {
@@ -147,6 +150,7 @@ export default {
       vlayout: true,
       isDark: null,
       showMenu: false,
+      tabs: [],
     };
   },
   computed: {
@@ -188,6 +192,7 @@ export default {
       }
       this.config = merge(defaults, config);
       this.services = this.config.services;
+      if (this.config.tabs) { this.tabs = this.config.tabs; }
 
       document.title =
         this.config.documentTitle ||
@@ -252,6 +257,7 @@ export default {
 
       if (!filter) {
         this.services = this.config.services;
+      if (this.config.tabs) { this.tabs = this.config.tabs; }
         return;
       }
 
