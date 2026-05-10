@@ -1,0 +1,32 @@
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Applications"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Get started"
+        icon: "fa-solid fa-download"
+        subtitle: "Start using Homer in a few minutes"
+        tag: "setup"
+        url: "https://github.com/bastienwirtz/homer?tab=readme-ov-file#get-started"
+      - name: "Configuration"
+        icon: "fa-solid fa-sliders"
+        subtitle: "Configuration options documentation"
+        tag: "setup"
+        url: "https://github.com/bastienwirtz/homer/blob/main/docs/configuration.md"
+      - name: "Theming"
+        icon: "fa-solid fa-palette"
+        subtitle: "Customize Homer appearance"
+        tag: "theming"
+        url: "https://github.com/bastienwirtz/homer/blob/main/docs/theming.md"
+      - name: "Smart cards"
+        icon: "fa-solid fa-palette"
+        subtitle: "Displays dynamic information or actions."
+        tag: "setup"
+        url: "https://github.com/bastienwirtz/homer/blob/main/docs/customservices.md"
+      - name: "Dashboard icons"
+        icon: "fa-solid fa-icons"
+        subtitle: "Dashboard icons"
+        tag: "setup"
+        url: "https://github.com/walkxcode/dashboard-icons"
