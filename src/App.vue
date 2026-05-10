@@ -178,9 +178,19 @@ export default {
       let config;
       try {
         config = await this.getConfig();
-        this.currentPage = window.location.hash.substring(1) || "default";
 
-        if (this.currentPage !== "default") {
+	const defaultTab = config?.tabs?.find(t => t.default)?.config
+	  || config?.tabs?.[0]?.config
+	  || "default";
+
+	if (!window.location.hash && config?.tabs?.length) {
+	  window.location.hash = defaultTab;
+	  return;
+	}
+
+	this.currentPage = window.location.hash.substring(1) || defaultTab;
+
+	if (this.currentPage !== "default") {
           let pageConfig = await this.getConfig(
             `assets/${this.currentPage}.yml`,
           );
