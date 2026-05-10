@@ -73,9 +73,9 @@ updateIntervalMs: 30000 # interval in milliseconds, minimum is 1000 (1s). Remove
 
 tabs:
   - name: "Tab#1"
-    config: "tab-FirstTab" # This will read from tab-FirstTab.yml in the same directory
+    config: "config.SecondTab" # This will read from config.SecondTab.yml in the same directory
     icon: "fas fa-globe"
     default: true
   - name: "Tab#2"
-    config: "tab-SecondTab"  # This will read from tab-SecondTab.yml in the same directory
+    config: "config.SecondTab"  # This will read from config.SecondTab.yml in the same directory
     icon: "fas fa-network-wired"
